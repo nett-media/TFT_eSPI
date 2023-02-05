@@ -63,8 +63,8 @@ void TFT_eSPI_Button::drawButton(bool inverted, String long_name) {
   }
 
   uint8_t r = min(_w, _h) / 4; // Corner radius
-  _gfx->fillRoundRect(_x1, _y1, _w, _h, r, fill);
-  _gfx->drawRoundRect(_x1, _y1, _w, _h, r, outline);
+  _gfx->fillRect(_x1, _y1, _w, _h, fill);
+  _gfx->drawRect(_x1, _y1, _w, _h, outline);
 
   if (_gfx->textfont == 255) {
     _gfx->setCursor(_x1 + (_w / 8),
@@ -83,9 +83,9 @@ void TFT_eSPI_Button::drawButton(bool inverted, String long_name) {
     _gfx->setTextPadding(0);
 
     if (long_name == "")
-      _gfx->drawString(_label, _x1 + (_w/2) + _xd, _y1 + (_h/2) - 4 + _yd);
+      _gfx->drawString(_label, _x1 + (_w/2) + _xd, _y1 + (_h/2) + _yd);
     else
-      _gfx->drawString(long_name, _x1 + (_w/2) + _xd, _y1 + (_h/2) - 4 + _yd);
+      _gfx->drawString(long_name, _x1 + (_w/2) + _xd, _y1 + (_h/2) + _yd);
 
     _gfx->setTextDatum(tempdatum);
     _gfx->setTextPadding(tempPadding);
