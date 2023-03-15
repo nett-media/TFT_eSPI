@@ -38,7 +38,7 @@ class TFT_eSPI_Button : public TFT_eSPI {
   uint16_t _w, _h;   // Width and height of button
   uint8_t  _textsize, _textdatum; // Text size multiplier and text datum for button
   uint16_t _outlinecolor, _fillcolor, _textcolor;
-  char     _label[10]; // Button text is 9 chars maximum unless long_name used
+  char     _label[16]; // Button text is 15 chars maximum unless long_name used
 
   bool  currstate, laststate; // Button states
 };
